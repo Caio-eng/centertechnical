@@ -13,12 +13,11 @@ import com.tecnic.centertechnical.domain.enums.Perfil;
 
 @Entity
 public class Tecnico extends Pessoa {
-
 	private static final long serialVersionUID = 1L;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "tecnico")
-	private List<Chamado>  chamados = new ArrayList<>();
+	private List<Chamado> chamados = new ArrayList<>();
 
 	public Tecnico() {
 		super();
@@ -37,7 +36,7 @@ public class Tecnico extends Pessoa {
 		this.cpf = obj.getCpf();
 		this.email = obj.getEmail();
 		this.senha = obj.getSenha();
-		this.perfils = obj.getPerfils().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
+		this.perfis = obj.getPerfis().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
 	}
 
@@ -48,5 +47,5 @@ public class Tecnico extends Pessoa {
 	public void setChamados(List<Chamado> chamados) {
 		this.chamados = chamados;
 	}
-	
+
 }
