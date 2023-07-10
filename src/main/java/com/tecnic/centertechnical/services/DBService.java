@@ -21,7 +21,7 @@ public class DBService {
 	private BCryptPasswordEncoder encoder;
 
 	public void instaciaDB() {
-		Tecnico tec1 = new Tecnico(null, "Admin", "94213127087", "admin@email.com", encoder.encode("admin"));
+		Tecnico tec1 = new Tecnico(null, "Admin", "94213127087", "admin@email.com", encoder.encode("123"));
 		tec1.addPerfil(Perfil.ADMIN);
 		
 		pessoaRepository.saveAll(Arrays.asList(tec1));
